@@ -5,17 +5,16 @@
 
 <struts>
 	<package name="main" extends="struts-default">
-
 		<result-types>
 			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
 		</result-types>
-		
-		<!-- <action name="" class="" method="execute"> -->
-		<!-- <result name="success"></result> -->
-		<!-- </action> -->
 
-		<action name="home">
+		<action name="home" class="net.charliemcallister.flashcards.web.actions.HomeAction" method="execute">
 			<result name="success" type="tiles">homePage</result>
+		</action>
+		
+		<action name="flashcards" class="net.charliemcallister.flashcards.web.actions.ShowFlashCardsAction">
+			<result name="success" type="tiles">flashCardsPage</result>
 		</action>
 	</package>
 </struts>

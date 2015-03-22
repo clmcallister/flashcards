@@ -13,4 +13,7 @@
 		<put-attribute name="body" value="/homeBody.jsp" />
 	</definition>
 
+	<definition name="flashCardsPage" extends="mainLayout">
+		<put-attribute name="body" value="/flashCards.jsp" />
+	</definition>
 </tiles-definitions>

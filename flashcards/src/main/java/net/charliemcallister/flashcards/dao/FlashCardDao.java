@@ -1,5 +1,7 @@
 package net.charliemcallister.flashcards.dao;
 
+import java.util.List;
+
 import net.charliemcallister.flashcards.model.FlashCard;
 
 public interface FlashCardDao {
@@ -19,4 +21,13 @@ public interface FlashCardDao {
 	 * @return The identifier of the stored <code>FlashCard</code> instance
 	 */
 	public int persistFlashCard(FlashCard flashCard);
+	
+	/**
+	 * Returns a list of <code>FlashCard</code> objects from the datastore which belong to a specific topic that is
+	 * specified.
+	 * 
+	 * @param topicId The identifer of the specified topic
+	 * @return The list of <code>FlashCard</code> objects.
+	 */
+	public List<FlashCard> getFlashCards(long topicId);
 }
