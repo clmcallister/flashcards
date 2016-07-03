@@ -41,7 +41,7 @@ public class FlashCardDaoJPAImplTest {
 	@Test
 	public void testPersistFlashCard() {
 		FlashCard card = new FlashCard();
-		card.setQuestion("What is eggs?");
+		card.setQuestion("What are eggs?");
 		card.setAnswer("Eggs are baby chickens");
 		
 		Topic topic = new Topic();
