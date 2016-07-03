@@ -18,13 +18,15 @@ public class FlashCardDaoJPAImpl implements FlashCardDao {
 	private EntityManager entityManager;
 
 	public FlashCard getFlashCardById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		String queryStr = "SELECT f FROM FlashCard j WHERE f.id = :flashCardId";
+		TypedQuery<FlashCard> query = entityManager.createQuery(queryStr, FlashCard.class);
+		query.setParameter("flashCardId", id);
+		return query.getSingleResult();
 	}
 
 	public int persistFlashCard(FlashCard flashCard) {
-		// TODO Auto-generated method stub
-		return 0;
+		entityManager.persist(flashCard);
+		return flashCard.getId();
 	}
 
 	public List<FlashCard> getFlashCards(long topicId) {
