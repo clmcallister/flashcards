@@ -18,7 +18,7 @@ public class FlashCardDaoJPAImpl implements FlashCardDao {
 	private EntityManager entityManager;
 
 	public FlashCard getFlashCardById(int id) {
-		String queryStr = "SELECT f FROM FlashCard j WHERE f.id = :flashCardId";
+		String queryStr = "SELECT f FROM FlashCard f WHERE f.id = :flashCardId";
 		TypedQuery<FlashCard> query = entityManager.createQuery(queryStr, FlashCard.class);
 		query.setParameter("flashCardId", id);
 		return query.getSingleResult();
@@ -26,6 +26,7 @@ public class FlashCardDaoJPAImpl implements FlashCardDao {
 
 	public int persistFlashCard(FlashCard flashCard) {
 		entityManager.persist(flashCard);
+		entityManager.flush();
 		return flashCard.getId();
 	}
 
