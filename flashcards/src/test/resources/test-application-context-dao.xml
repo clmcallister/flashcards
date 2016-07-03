@@ -32,7 +32,7 @@
 	</bean>
 
 	<bean id='entityManagerFactory'
-		class='org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean' p:persistence-xml-location="classpath:persistence.xml">
+		class='org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean' p:persistence-xml-location="classpath:persistence-test.xml">
 		<property name="persistenceUnitName" value="flashCardPersistence" />
 		<property name='dataSource' ref='dataSource' />
 		<property name="packagesToScan" value="net.charliemcallister.flashcards.model.*" />		

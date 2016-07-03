@@ -1,6 +1,6 @@
 package net.charliemcallister.flashcards.dao;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 import net.charliemcallister.flashcards.model.FlashCard;
 import net.charliemcallister.flashcards.model.Topic;
 
@@ -32,12 +32,15 @@ public class FlashCardDaoJPAImplTest {
 	public void testGetFlashCardById() {
 		FlashCard card = dao.getFlashCardById(1);
 		assertEquals("What is ham?", card.getQuestion());
+		assertEquals("Ham is meat from a pig", card.getAnswer());
+		assertNotNull(card.getTopic());
+		assertEquals(1, card.getTopic().getId());
+		assertEquals("Food", card.getTopic().getName());
 	}
 
 	@Test
 	public void testPersistFlashCard() {
 		FlashCard card = new FlashCard();
-		card.setId(2);
 		card.setQuestion("What is eggs?");
 		card.setAnswer("Eggs are baby chickens");
 		
